@@ -12,7 +12,7 @@ public class homework3011 {
         //        Пример: "Hello", "There" -> ELLOHERE
 
         String str2 = "here";
-        str1 = ("Hello".substring(1,4).toUpperCase());
+        str1 = ("Hello".substring(1).toUpperCase());
         str2 ="here".toUpperCase();
         System.out.print (str1+str2);
 
