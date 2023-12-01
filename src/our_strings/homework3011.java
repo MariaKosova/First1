@@ -11,9 +11,9 @@ public class homework3011 {
         //Написать метод, принимающий две строки и возвращающий эти строки, соединенные вместе, но без первых букв и в верхнем регистре.
         //        Пример: "Hello", "There" -> ELLOHERE
 
-        String str2 = "here";
+        String str2 = "there";
         str1 = ("Hello".substring(1).toUpperCase());
-        str2 ="here".toUpperCase();
+        str2 =("there".substring(1).toUpperCase());
         System.out.print (str1+str2);
 
     }
