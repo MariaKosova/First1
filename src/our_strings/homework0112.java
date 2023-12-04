@@ -30,7 +30,7 @@ public class homework0112 {
         for (int i = 0; i < strArray2.length; i++) {
             Arrays.sort(strArray2);
             if (strArray1 == strArray2) {
-                //System.out.println("This is not anagram");
+                //System.out.println("This is anagram");
                 return result;
             }
         }
