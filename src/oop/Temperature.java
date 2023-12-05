@@ -12,6 +12,7 @@ public class Temperature {
 
         this.farenheit = farenheit;
 
+
     }
     int celsius () {
         return 5*(farenheit - 32)/9;
