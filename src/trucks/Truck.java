@@ -24,13 +24,13 @@ public class Truck {
         this.maxFuel = maxFuel;
         this.owner = owner;
     }
-    public String getModel (){
-        return model;
-    }
+    //public String getModel (){
+      //  return model;
+    //}
     public String getManufacturer(){
-        return manufacturer;
+     return manufacturer;
     }
-    public int getYear (){
+    /*public int getYear (){
         return year;
     }
     public String getColor() {
@@ -41,48 +41,110 @@ public class Truck {
         return maxWeight;
     }
 
-    public void setMaxWeight(int maxWeight) {
-        if (getMaxWeight() < 20000) {
-            this.maxWeight = maxWeight;
-        }
-        else System.out.println("The weight is too big");
-    }
+    //public void setMaxWeight(int maxWeight) {
+     //   if (getMaxWeight() < 20000) {
+     //       this.maxWeight = maxWeight;
+     //   }
+     //   else System.out.println("The weight is too big");
+    //}
 
     public int getMaxFuel() {
         return maxFuel;
     }
 
-    public int getCurrentFuel() {
-        if (currentFuel==0 || currentFuel<3){
-            System.out.println ("Please fill the fuel tank, the truck can't go");
-        }
-        return currentFuel;
+    //public int getCurrentFuel() {
+    //    if (currentFuel==0 || currentFuel<3){
+    //        System.out.println ("Please fill the fuel tank, the truck can't go");
+    //    }
+    //    return currentFuel;
 
-    }
+    //}
     //public String toString (){
        // return  ( "Truck:" + getModel() + "Manufacturer " + getManufacturer() + " Year " + getYear() + "Color" + getColor() + "Max Weight" + getMaxWeight() +
          //       "Max Fuel" + getMaxFuel() + "Owner" + getOwner());
 //}
+*/
 
-
-
-
-
-
-    public void unload (int unloadindWeight){
+public void load (int weight) {
+    if (weight > getRemainingCapacity()) {
+        System.out.println("This is too heavy to me! I can't continue");
+        printRemainingCapacity();
+        return;
+        //выйдет из метода
     }
-    public void move(){}
-    public void stop(){}
-    public void fillFuel(int currentFuel){}
+    currentWeight += weight;
+    System.out.println("Loading " + weight + " kg...");
+    System.out.println(" Loaded" + weight + " kg...");
+    printRemainingCapacity();
+}
+
+
+public void unload (int unloadingWeight) {
+    if (unloadingWeight > currentWeight) {
+        System.out.println(" Not enough cargo!");
+        printRemainingCargo();
+        return;
+    }
+
+    if (unloadingWeight < 0) {
+        System.out.println("Can't unload negative weight");
+        return;
+    }
+
+    currentWeight -= unloadingWeight;
+    System.out.println("Unloading" + unloadingWeight + " kg...");
+    System.out.println("Unloaded" + unloadingWeight + " kg ...");
+    printRemainingCargo();
+}
+private void printRemainingCargo() {
+            System.out.println(" Remaining cargo weight is" + currentWeight + " kg");
+        }
+        public void move(){
+        if(currentFuel ==0) {
+            System.out.println ("Please load the truck before driving!");
+            return;
+        }
+        System.out.println ( "Loading..");
+        System.out.println (" Loading ..");
+        System.out.println (" Loaded..");
+
+}
+    public void stop(){
+        System.out.println ( "Stopping...");
+        System.out.println ( "Stopping...");
+        System.out.println ("Yeah!");
+
+    }
+    public void setCurrentFuel(int currentFuel){
+        if(currentFuel> maxFuel){
+            this.currentFuel = maxFuel;
+            return;
+        }
+        this.currentFuel= currentFuel;
+    }
 
     public String getOwner(){
-        return "the owner is" + owner;
+        return "the owner is " + owner;
     }
-    private void printRemainingCapacity(){} //печатает, сколько остается груза на борту
+    private void printRemainingCapacity(){
+        System.out.println ("Remaining capacity " + getRemainingCapacity() + "kg");
+    } //печатает, сколько можно загрузить груза на борту
 
-    public String toString () {
-        return "";
+    private int getRemainingCapacity() {
+        return maxWeight -currentWeight;
+    }
 
+    @Override
+    public String toString() {
+        return "Truck{" +
+                "model='" + model + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", year=" + year +
+                ", color='" + color + '\'' +
+                ", maxWeight=" + maxWeight +
+                ", maxFuel=" + maxFuel +
+                ", owner='" + owner + '\'' +
+                '}';
     }
 
 }
