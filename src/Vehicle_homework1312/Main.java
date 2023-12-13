@@ -7,6 +7,9 @@ public class Main {
         Vehicle passengerCar = new PassengerCar("Sprinter", "Mercedez-Benz", 2022, "grey", 3350, 16, 4);
 
         Vehicle[] vehicles = {vehicle, truck, passengerCar};
+        for (Vehicle vehicle1: vehicles){
+            System.out.println(vehicle1);
+        }
 
         vehicle.move();
         vehicle.stop();
