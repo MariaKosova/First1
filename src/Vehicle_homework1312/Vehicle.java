@@ -21,4 +21,15 @@ public class Vehicle {
     public void stop () {
         System.out.println ("Vehicle stops. ");
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "model='" + model + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", year=" + year +
+                ", colour='" + colour + '\'' +
+                ", maxWeight=" + maxWeight +
+                '}';
+    }
 }
