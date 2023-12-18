@@ -8,7 +8,6 @@ public Money (String usd, String euro) {
     this.euro = euro;
 }
 
-
     @Override
     public String toString() {
         return "Money{" +
