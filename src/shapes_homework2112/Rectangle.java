@@ -18,7 +18,7 @@ public class Rectangle implements Shape {
 
     @Override
     public void findPerimeter() {
-        System.out.println("The rectangle's perimeter is:"  +(a+b));
+        System.out.println("The rectangle's perimeter is:"  +(a+b)*2);
     }
 }
 
